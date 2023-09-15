@@ -34,6 +34,6 @@ help = [
 ];
 
 banner = [
-  `<div class="pt-2"><span class="neutral">(if it's white, you can type it in).</span></div>`,
+  `<div class="pt-2"><span class="neutral">Type <span class="command">help</span> to see the main available commands (if it's white, you can type it in).</span></div>`,
 ];
  
