@@ -26,6 +26,7 @@
 
 #mother {
   height:100vh;
+  max-width:1000px;
   cursor:text;
   padding: 3rem; /* must be responsive */
 }
