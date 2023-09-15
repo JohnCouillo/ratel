@@ -33,10 +33,10 @@ irc = [
 
 help = [
   "<br>",
-  '<span class="command">about</span>            <span class="neutral">Displays who I am</span>',
-  '<span class="command">clear</span>            <span class="neutral">Clears the terminal</span>',
-  '<span class="command">email</span>            <span class="neutral">Don\'t even try.</span>',
-  '<span class="command">social</span>           <span class="neutral">My social networks (and there\'s plenty of them!)</span>',
+  '<span class="command">about</span>               <span class="neutral">Displays who I am</span>',
+  '<span class="command">clear</span>               <span class="neutral">Clears the terminal</span>',
+  '<span class="command">email</span>               <span class="neutral">Don\'t even try.</span>',
+  '<span class="command">social</span>              <span class="neutral">My social networks (and there\'s plenty of them!)</span>',
   "<br>",
   "<span class='neutral'>But it won't help much because most commands are (loosely) kept secret. </span>",
   "<br>",
