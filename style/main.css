@@ -1,0 +1,175 @@
+:root {
+  --darkest-color: #2A2A2E;
+  --brightest-color: white;
+  --neutral-color: #ffb86c;
+  --secondary-color:#F4EF6D;
+  
+  --main-font: Hack, monospace;
+  --title-font: Arcade;
+}
+
+@font-face {
+  font-family: Arcade;
+  src: url('./ARCADE_I.TTF');
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box; 
+  border-width: 0; 
+/*   border-style: solid; 
+  border-color: #e5e7eb;  */
+} 
+
+/* THE MOST IMPORTANT CONTAINER */
+
+#mother {
+  height:100vh;
+  cursor:text;
+  padding: 3rem; /* must be responsive */
+}
+
+/* THE "TITLE" (MUST BE RESPONSIVE)*/
+
+.welcome {
+  font-family:var(--title-font);
+  text-shadow: 0 0 2px var(--neutral-color);
+  font-size:larger; /* must be responsive */
+  animation: blinker_title 0.1s linear infinite;
+}
+@keyframes blinker_title {
+  5% {
+    opacity: 0.85;
+  }
+}
+
+html {
+  line-height: 1.3; 
+  font-family: var(--main-font);
+  font-size:medium; /* must be responsive */
+  text-size-adjust: none;
+  max-height:800px;
+}
+
+body {
+  margin: 0; 
+  line-height: inherit; 
+  color: var(--neutral-color);
+  background-color: var(--darkest-color);
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* @media (max-width: 768px) and (min-width: 425px){
+}
+@media (max-width: 424px) {
+} */
+
+.neutral, .error, a {
+  color:var(--neutral-color);
+}
+
+.error {
+  font-style: italic;
+  animation: blink-animation 0.2s steps(2, start) 0.2s;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.command {
+  color:var(--brightest-color);
+}
+.highlighted {
+  color:var(--secondary-color);
+}
+
+a {
+  font-weight: bold;
+  background-color: var(--darkest-color);
+  text-decoration: none;
+}
+
+a:hover {
+  background: var(--neutral-color);
+  color: var(--darkest-color);
+  animation: blinker_title 0.1s linear infinite;
+}
+
+input {
+  font-family: inherit; 
+  color: inherit; 
+  margin: 0; 
+  padding: 0; 
+  font-style:normal;
+}
+
+p,
+pre {
+  margin: 0;
+}
+
+.texter {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  left: -1000px;
+  position: absolute;
+}
+
+.cursor {
+  font-size: 12px;
+  background-color: var(--neutral-color);
+  position: relative;
+  opacity: 1;
+  height: 1.5em;
+  width: 10px;
+  max-width: 10px;
+  transform: translateY(4px);
+  overflow: hidden;
+  text-indent: -5px;
+  display: inline-block;
+  text-decoration: blink;
+  animation: blinker 0.8s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#command {
+  cursor: text;
+  color: var(--neutral-color);
+  height:50px;
+}
+
+#liner {
+  line-height: 1.3em;
+  margin-top:0px;
+  animation: show 0.5s ease forwards;
+  animation-delay: 0s;
+  opacity: 0;
+    .no-animation {
+      margin-top:0;
+    }
+}
+
+#liner::before {
+  color:var(--neutral-color);
+  content: "john@berlingot:~$";
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

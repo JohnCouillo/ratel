@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="250">
+  <link href="style/main.css" rel="stylesheet" />
+
+  <title>Johannes Berlin Goth</title>
+</head>
+
+<body style="font-family: 'Hack', monospace;">
+    
+      <div id="mother">
+        
+        <div class="flex">
+          <pre class="welcome">      
+Johannes Berlin Goth Untold Adventures                     
+          </pre>
+          <span class="neutral">Type <span class="command">help</span> to see the main available commands.</span>
+        </div>
+        
+        <div id="terminal">
+          <a id="before"></a>
+        </div>
+        
+	      <div id="command" onclick="$('texter').focus();">
+          <input type="text" id="texter" autofocus="true" class="texter" onkeyup="typeIt(this, event)" onkeydown="typeIt(this, event); 
+                   moveIt(this.value.length, event)" onkeypress="typeIt(this, event)"></input>
+          <div id="liner">
+            <span id="typer"></span><b class="cursor" id="cursor">█</b><div class="list"></div>
+      	  </div>
+        
+
+        <script src="./js/commands.js"></script>
+        <script src="./js/main.js"></script>                           
+        
+</body>
+</html>
