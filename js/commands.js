@@ -1,5 +1,28 @@
 var mastodon = "https://mastodon.social/@ratel";
 var irc_tuto = "https://www.youtube.com/watch?v=-4ab5-F72nY";
+var _about =      ["about", "               Displays who I am"];
+var _clear =      ["clear", "               Clears the terminal"];
+var _email =      ["email", "               Don\'t even try"];
+var _social =     ["social", "              My social networks (and there\'s plenty of them!)"];
+var _mastodon =   ["mastodon", "            <a href='https://mastodon.social/@ratel' target='blank'>mastodon.social/@ratel</a>"];
+var _facebook =   ["facebook", "            Never again"];
+var _myspace =    ["myspace", "             huhu"];
+var _irc =        ["irc", "                 Now this is getting interesting..."]
+var _help = [_about, _clear, _email, _social]; /* this '_help' variable is an array of arrays */
+var help_ = []; /* this 'help_' variable is the array of strings displayed by the "help" command. */ 
+
+var _social = [_facebook, _myspace, _mastodon, _irc];
+var social_ = [];
+
+function listing(_commandList) { /* use this function to generate strings */
+  var commandList_= [];
+  for (let i = 0; i < _commandList.length; i++) {
+    let j = _commandList[i];
+    commandList_+=`<span class="command">`+j[0]+`</span><span class="neutral">`+j[1]+`</span>`+'<br>'
+  }
+  return commandList_;
+}
+
 
 
 about = [
@@ -8,15 +31,10 @@ about = [
   "<br>",
 ];
 
+social_ = listing(_social);
 social = [
   "<br>",
-  'mastodon            <a href="' +
-    mastodon +
-    '" target="blank">mastodon.social/@ratel' +
-    "</a>",
-  "facebook            <span class='neutral'>Never again</span>",
-  "myspace             <span class='neutral'>huhu</span>",
-  '<span class="command">irc</span>                 <span class="neutral">Now this is getting interesting</span>',
+  social_,
   "<br>",
 ];
 
@@ -44,12 +62,10 @@ couscous = [
   "<br>",
 ];
 
+help_ = listing(_help);
 help = [
   "<br>",
-  '<span class="command">about</span>               <span class="neutral">Displays who I am</span>',
-  '<span class="command">clear</span>               <span class="neutral">Clears the terminal</span>',
-  '<span class="command">email</span>               <span class="neutral">Don\'t even try.</span>',
-  '<span class="command">social</span>              <span class="neutral">My social networks (and there\'s plenty of them!)</span>',
+  help_,
   "<br>",
   "<span class='neutral'>But it won't help much because most commands are (loosely) kept secret. </span>",
   "<br>",
