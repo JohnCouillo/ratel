@@ -85,6 +85,9 @@ function commander(cmd) {
     case "fils de pute":
       loopLines(fdp, "highlighted margin", 80);
       break;
+    case "couscous":
+      loopLines(couscous, "highlighted margin", 80);
+      break;
     case "history":
       addLine("<br>", "", 0);
       loopLines(commands, "highlighted", 80);

@@ -38,6 +38,12 @@ fdp = [
   "<br>",
 ];
 
+couscous = [
+  "<br>",
+  "<span class='neutral'>Bouteldja.</span>",
+  "<br>",
+];
+
 help = [
   "<br>",
   '<span class="command">about</span>               <span class="neutral">Displays who I am</span>',
