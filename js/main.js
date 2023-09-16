@@ -81,12 +81,8 @@ function commander(cmd) {
       loopLines(social, "highlighted margin", 80);
       break;
     case "fdp":
-      loopLines(fdp, "highlighted margin", 80);
-      break;
-      case "filsdepute":
-      loopLines(fdp, "highlighted margin", 80);
-      break;
-      case "fils de pute":
+    case "filsdepute":
+    case "fils de pute":
       loopLines(fdp, "highlighted margin", 80);
       break;
     case "history":
