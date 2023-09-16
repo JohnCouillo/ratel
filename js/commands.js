@@ -1,6 +1,7 @@
 var mastodon = "https://mastodon.social/@ratel";
 var irc_tuto = "https://www.youtube.com/watch?v=-4ab5-F72nY";
 
+
 about = [
   "<br>",
   "<span class='neutral'>Hi, my name is John Berlingot, which is not my real name but we're supposed to have a name to communicate.</span>",
@@ -28,6 +29,12 @@ irc = [
   "<span class='neutral'>And in this regard, I doubt 'modern' social networks are the best option.</span>",
   "<br>",
   "<span class='neutral'>In case you're interested, <a href='https://www.youtube.com/watch?v=-4ab5-F72nY' target='_blank'>here is a very short intro.</a></span>",
+  "<br>",
+];
+
+fdp = [
+  "<br>",
+  "<span class='neutral'>C'est qui que tu traites de fils de pute, fils de pute ?</span>",
   "<br>",
 ];
 

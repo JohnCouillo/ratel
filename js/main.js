@@ -80,6 +80,15 @@ function commander(cmd) {
     case "social":
       loopLines(social, "highlighted margin", 80);
       break;
+    case "fdp":
+      loopLines(fdp, "highlighted margin", 80);
+      break;
+      case "filsdepute":
+      loopLines(fdp, "highlighted margin", 80);
+      break;
+      case "fils de pute":
+      loopLines(fdp, "highlighted margin", 80);
+      break;
     case "history":
       addLine("<br>", "", 0);
       loopLines(commands, "highlighted", 80);
@@ -104,7 +113,7 @@ function commander(cmd) {
       
     default:
       addLine(
-        '<span class="error">There\'s no such command.</span>',
+        '<span class="error">There\'s no such command.</span><br>',
         "error",
         120
       );
