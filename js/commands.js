@@ -71,6 +71,19 @@ help = [
   "<br>",
 ];
 
+help_again = [
+  "<br>",
+  help_,
+  "<br>",
+];
+
+help_again3 = [
+  "<br>",
+  "<span class='neutral'>Dude this is the third time you're asking me! </span>",
+  help_,
+  "<br>",
+];
+
 banner = [
   `<div class="pt-2"><span class="neutral">Type <span class="command">help</span> to see the main available commands (if it's white, you can type it in).</span></div>`,
 ];

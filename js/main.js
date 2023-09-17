@@ -16,6 +16,11 @@ var command = document.getElementById("typer");
 var textarea = document.getElementById("texter");
 var terminal = document.getElementById("terminal");
 
+var help_times = 0;
+
+let bip = new Audio('./style/bip.mp3');
+
+
 var git = 0;
 var pw = false;
 var commands = [];
@@ -69,8 +74,20 @@ function enterKey(e) {
 function commander(cmd) {
   switch (cmd.toLowerCase()) {
     case "help":
+      if (help_times == 2) {
+        loopLines(help_again3, "highlighted margin", 80);
+        help_times=3;
+        break;
+      }
+      if (help_times == 1 || help_times > 2) {
+        loopLines(help_again, "highlighted margin", 80);
+        help_times++
+        break;
+      }
+      else {
       loopLines(help, "highlighted margin", 80);
-      break;
+      help_times++
+      break;}
     case "about":
       loopLines(about, "highlighted margin", 80);
       break;
@@ -86,6 +103,7 @@ function commander(cmd) {
       loopLines(fdp, "highlighted margin", 80);
       break;
     case "couscous":
+      bip.play();
       loopLines(couscous, "highlighted margin", 80);
       break;
     case "history":
