@@ -1,5 +1,6 @@
 var mastodon = "https://mastodon.social/@ratel";
 var irc_tuto = "https://www.youtube.com/watch?v=-4ab5-F72nY";
+var _wtf =        ["wtf", "                 Geez, what the f*ck is this trend?!"];
 var _about =      ["about", "               Displays who I am"];
 var _clear =      ["clear", "               Clears the terminal"];
 var _email =      ["email", "               Don\'t even try"];
@@ -8,7 +9,7 @@ var _mastodon =   ["mastodon", "            <a href='https://mastodon.social/@ra
 var _facebook =   ["facebook", "            Never again"];
 var _myspace =    ["myspace", "             huhu"];
 var _irc =        ["irc", "                 Now this is getting interesting..."]
-var _help = [_about, _clear, _email, _social]; /* this '_help' variable is an array of arrays */
+var _help = [_about, _clear, _email, _social, _wtf]; /* this '_help' variable is an array of arrays */
 var help_ = []; /* this 'help_' variable is the array of strings displayed by the "help" command. */ 
 
 var _social = [_facebook, _myspace, _mastodon, _irc];
@@ -85,6 +86,12 @@ help_again3 = [
 ];
 
 banner = [
-  `<div class="pt-2"><span class="neutral">Type <span class="command">help</span> to see the main available commands (if it's white, you can type it in).</span></div>`,
+  `<div class="pt-2"><span class="neutral">Just typed "git ass" instead of "git add". Whatever...Type <span class="command">help</span> to see the main available commands (if it's white, you can type it in).</span></div>`,
 ];
+
+wtf = [
+  `<iframe width="236" height="419" src="https://www.youtube.com/embed/rovd2NHWz_A" title="Pretty WOMAN  knows how to handle a knife🔪 #camping #survival #bushcraft #outdoors" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
+  `<span class='neutral'>I'm pretty sure this stupid trend has a name. I'm not talking about "survivalism". I'm talking about the other thing.</span>`,
+]
  
+

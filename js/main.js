@@ -40,7 +40,8 @@ command.innerHTML = textarea.value;
 function enterKey(e) {
   if (e.keyCode == 181) {
     document.location.reload(true);
-  }
+  } 
+   
  
     if (e.keyCode == 13) {
       commands.push(command.innerHTML);
@@ -96,6 +97,9 @@ function commander(cmd) {
       break;
     case "social":
       loopLines(social, "highlighted margin", 80);
+      break;
+      case "wtf":
+      loopLines(wtf, "highlighted margin", 80);
       break;
     case "fdp":
     case "filsdepute":
