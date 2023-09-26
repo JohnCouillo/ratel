@@ -1,97 +1,52 @@
-var mastodon = "https://mastodon.social/@ratel";
-var irc_tuto = "https://www.youtube.com/watch?v=-4ab5-F72nY";
-var _wtf =        ["wtf", "                 Geez, what the f*ck is this trend?!"];
-var _about =      ["about", "               Displays who I am"];
-var _clear =      ["clear", "               Clears the terminal"];
-var _email =      ["email", "               Don\'t even try"];
-var _social =     ["social", "              My social networks (and there\'s plenty of them!)"];
-var _mastodon =   ["mastodon", "            <a href='https://mastodon.social/@ratel' target='blank'>mastodon.social/@ratel</a>"];
-var _facebook =   ["facebook", "            Never again"];
-var _myspace =    ["myspace", "             huhu"];
-var _irc =        ["irc", "                 Now this is getting interesting..."]
-var _help = [_about, _clear, _email, _social, _wtf]; /* this '_help' variable is an array of arrays */
-var help_ = []; /* this 'help_' variable is the array of strings displayed by the "help" command. */ 
+/* COMMANDS */
 
-var _social = [_facebook, _myspace, _mastodon, _irc];
-var social_ = [];
-
-function listing(_commandList) { /* use this function to generate strings */
-  var commandList_= [];
-  for (let i = 0; i < _commandList.length; i++) {
-    let j = _commandList[i];
-    commandList_+=`<span class="command">`+j[0]+`</span><span class="neutral">`+j[1]+`</span>`+'<br>'
-  }
-  return commandList_;
+class Command {
+  constructor(directory, label, description, content) {
+    this.directory=directory;
+    this.label=label;
+    this.description=description;
+    this.content=content;
+/*     this.spaced="\xa0".repeat(20-this.label.length) */
+this.spaced=".".repeat(20-this.label.length)
+  };
 }
 
+var bip = new Audio('./style/bip.mp3'); 
 
 
-about = [
-  "<br>",
-  "<span class='neutral'>Hi, my name is John Berlingot, which is not my real name but we're supposed to have a name to communicate.</span>",
-  "<br>",
+
+var social = new Command("help", "social", "my social networks (and there's plenty of them!)")
+var wtf = new Command ("help", "wtf", "I'm too ol for dis shit")
+var clear = new Command ("help", "clear", "clears the terminal")
+var email = new Command ("help", "email", "nope", "<img width=50% src='https://64.media.tumblr.com/12a4bf3150a4ac9eac5f5dfa6c81d668/68d4c3bba5a2f218-1d/s540x810/e79baa0ba1348fed46826d8b12a14a7a97a8ef2c.gif'>")
+var about = new Command("help", "about", "the about section", "Hi, my name is John Berlingot, which is not my real name but we're supposed to have a name to communicate.", "<br>",)
+var history_ = new Command("help", "history", "shows all the commands that you already typed");
+
+/*Commands, so to speak*/
+
+var twitter = new Command("social","twitter",'oh, scuse me, I meant "X"', "<span class='neutral'>And, no.</span>",
+"<br>",)
+var irc = new Command("social","irc",'Now that is interesting...', '<span class=`neutral`>IRC (Internet Relay Chat) is by far my favorite social network in that it\'s not what most people would call a social network. It\'s the relic of a time when what one was thinking and saying mattered more than who their "friends" were and how popular they looked. There simply wasn\'t any profile to keep the record of this kind of things. You had to f***ing LISTEN to what they were saying! And in this regard, I doubt "modern" social networks are the best option. In case you\'re interested, <a href="https://www.youtube.com/watch?v=-4ab5-F72nY" target="_blank">here is a very short intro.</a></span>',
+"<br>",)
+var blusky = new Command("social","blusky","not interested", "no","<br>",)
+var facebook = new Command("social","facebook","you must be kidding", "<span class='neutral'>I told you.</a></span>",
+"<br>",)
+var icq = new Command("social","icq","like in the ol' days", "<span class='neutral'>Good old days, but no.</a></span>",
+"<br>",)
+var mastodon = new Command("social","mastodon","<a href='https://mastodon.social/@ratel' target='blank'>mastodon.social/@ratel</a>", "",
+"<br>",) 
+
+var requestList = [twitter, icq, blusky, facebook, irc, mastodon, about, social, wtf, clear, email, history_]
+
+
+
+/* REACTIONS */
+
+const couscous = {caller:["couscous", "prout", "bouteldja", "hop"],content:"<img src='https://www.tribunejuive.info/wp-content/uploads/2021/01/ERffUt9X0AAecIl-604x1024.jpg' width=30%>", func: function(){bip.play();},}
+const zebbi = {caller:["zobo", "zob", "zebi", "zeib"],content:"<span class='neutral'>Contenu de zebbi</span>", func: function(){console.log('OK');},}
+const zebbi2 = {caller:["zob", "zobb", "zebbi", "zeb"],content:"<span class='neutral'>Contenu de ta mère</span>", func: function(){console.log('OK');},}
+
+var reactionList = [zebbi, zebbi2, couscous]
+
+welcome = [`<div class="pt-2"><span class="neutral">Type <span class="command">help</span> to see the main available commands.</span></div>`,
 ];
-
-social_ = listing(_social);
-social = [
-  "<br>",
-  social_,
-  "<br>",
-];
-
-irc = [
-  "<br>",
-  "<span class='neutral'>IRC (Internet Relay Chat) is by far my favorite social network in that it's not what most people would call a social network. It's the relic of a time when what one was thinking and saying mattered more than who their 'friends' were and how popular they looked.</span>",
-  "<br>",
-  "<span class='neutral'>There simply wasn't any profile to keep the record of this kind of things. You had to f***ing LISTEN to what they were saying!</span>",
-  "<br>",
-  "<span class='neutral'>And in this regard, I doubt 'modern' social networks are the best option.</span>",
-  "<br>",
-  "<span class='neutral'>In case you're interested, <a href='https://www.youtube.com/watch?v=-4ab5-F72nY' target='_blank'>here is a very short intro.</a></span>",
-  "<br>",
-];
-
-fdp = [
-  "<br>",
-  "<span class='neutral'>C'est qui que tu traites de fils de pute, fils de pute ?</span>",
-  "<br>",
-];
-
-couscous = [
-  "<br>",
-  "<span class='neutral'>Bouteldja.</span>",
-  "<br>",
-];
-
-help_ = listing(_help);
-help = [
-  "<br>",
-  help_,
-  "<br>",
-  "<span class='neutral'>But it won't help much because most commands are (loosely) kept secret. </span>",
-  "<br>",
-];
-
-help_again = [
-  "<br>",
-  help_,
-  "<br>",
-];
-
-help_again3 = [
-  "<br>",
-  "<span class='neutral'>Dude this is the third time you're asking me! </span>",
-  help_,
-  "<br>",
-];
-
-banner = [
-  `<div class="pt-2"><span class="neutral">Just typed "git ass" instead of "git add". Whatever...Type <span class="command">help</span> to see the main available commands (if it's white, you can type it in).</span></div>`,
-];
-
-wtf = [
-  `<iframe width="236" height="419" src="https://www.youtube.com/embed/rovd2NHWz_A" title="Pretty WOMAN  knows how to handle a knife🔪 #camping #survival #bushcraft #outdoors" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
-  `<span class='neutral'>I'm pretty sure this stupid trend has a name. I'm not talking about "survivalism". I'm talking about the other thing.</span>`,
-]
- 
-

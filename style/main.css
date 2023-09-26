@@ -84,9 +84,14 @@ body {
   }
 }
 
-.command {
+.command, .label {
   color:var(--brightest-color);
 }
+
+.directory {
+  color: greenyellow;
+}
+
 .highlighted {
   color:var(--secondary-color);
 }
@@ -174,3 +179,24 @@ pre {
     opacity: 1;
   }
 }
+
+
+/* #typer { 
+  border:solid 1px red;
+}
+
+#terminal {
+  border:dotted 1px greenyellow
+}
+
+#before {
+ border: solid 3px orange;
+}
+
+#terminal {
+  background-color: black;
+}
+
+p {
+  background-color:grey
+} */
