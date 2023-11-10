@@ -36,17 +36,15 @@ var icq = new Command("social","icq","like in the ol' days", "<span class='neutr
 var mastodon = new Command("social","mastodon","<a href='https://mastodon.social/@ratel' target='blank'>mastodon.social/@ratel</a>", "",
 "<br>",) 
 
-var requestList = [twitter, icq, blusky, facebook, irc, mastodon, about, social, wtf, clear, email, history_]
+var requestList = [twitter, icq, blusky, facebook, irc, mastodon, about, social, clear, email, history_]
 
 
 
 /* REACTIONS */
 
 const couscous = {caller:["couscous", "prout", "bouteldja", "hop"],content:"<img src='https://www.tribunejuive.info/wp-content/uploads/2021/01/ERffUt9X0AAecIl-604x1024.jpg' width=30%>", func: function(){bip.play();},}
-const zebbi = {caller:["zobo", "zob", "zebi", "zeib"],content:"<span class='neutral'>Contenu de zebbi</span>", func: function(){console.log('OK');},}
-const zebbi2 = {caller:["zob", "zobb", "zebbi", "zeb"],content:"<span class='neutral'>Contenu de ta mère</span>", func: function(){console.log('OK');},}
-
-var reactionList = [zebbi, zebbi2, couscous]
+const fdp = {caller:["fdp", "fils de pute"],content:"<span class='neutral'>Fils de pute toi-même</span>", func: function(){console.log('OK');},}
+var reactionList = [fdp, couscous]
 
 welcome = [`<div class="pt-2"><span class="neutral">Type <span class="command">help</span> to see the main available commands.</span></div>`,
 ];
